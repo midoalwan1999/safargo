@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حصن - Legalmark | مكتب محاماة</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a2e;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: #1a1a2e;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #f4d03f;
+        }
+
+        .logo .arabic {
+            font-family: 'Times New Roman', serif;
+            margin-left: 10px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #f4d03f;
+        }
+
+        .appointment-btn {
+            background-color: #f4d03f;
+            color: #1a1a2e;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .appointment-btn:hover {
+            background-color: #f8c471;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-family: 'Times New Roman', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #f4d03f;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #cccccc;
+        }
+
+        .consultation-btn {
+            background-color: #f4d03f;
+            color: #1a1a2e;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .hero-images img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .section-title {
+            font-family: 'Times New Roman', serif;
+            font-size: 2.5rem;
+            color: #f4d03f;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.5rem;
+            color: #cccccc;
+            margin-bottom: 1rem;
+        }
+
+        .see-detail {
+            color: #f4d03f;
+            text-decoration: none;
+            border-bottom: 1px solid #f4d03f;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            padding: 80px 0;
+            background-color: #16213e;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: #1a1a2e;
+        }
+
+        .feature i {
+            font-size: 3rem;
+            color: #f4d03f;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #f4d03f;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background-color: #16213e;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: #f4d03f;
+            margin-bottom: 1rem;
+        }
+
+        /* Office Info Section */
+        .office-info {
+            padding: 80px 0;
+            background-color: #16213e;
+        }
+
+        .office-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .office-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .contact-info {
+            background-color: #1a1a2e;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            color: #f4d03f;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            color: #cccccc;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 80px 0;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background-color: #16213e;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .stars {
+            color: #f4d03f;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #f4d03f;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: #16213e;
+        }
+
+        .faq-item {
+            background-color: #1a1a2e;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem;
+            background-color: #1a1a2e;
+            border: none;
+            color: #ffffff;
+            width: 100%;
+            text-align: right;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            color: #cccccc;
+        }
+
+        .faq-answer.active {
+            max-height: 200px;
+            padding: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #0f0f23;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer h4 {
+            color: #f4d03f;
+            margin-bottom: 1rem;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            color: #cccccc;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #f4d03f;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+            text-align: center;
+            color: #cccccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-content,
+            .about-content,
+            .office-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .features,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="arabic">حصن</span>
+                <span>Legalmark</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+            <button class="appointment-btn">حجز موعد</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Legal Heroes Among Us Inspiring</h1>
+                    <p>Navigating the Complexities of Law: Your Trusted Partner in Legal Understanding.</p>
+                    <button class="consultation-btn">Get Consultation</button>
+                </div>
+                <div class="hero-images">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop" alt="محامي محترف">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=300&fit=crop" alt="محامية محترفة">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <h2 class="section-title">Leading the Way Setting</h2>
+                    <p class="section-subtitle">Legal Precedents in Your Favor</p>
+                </div>
+                <div>
+                    <p>نحن مكتب محاماة متخصص يقدم خدمات قانونية شاملة بأعلى معايير الجودة والمهنية. فريقنا من المحامين ذوي الخبرة الواسعة يعمل على حماية حقوقكم وتحقيق مصالحكم القانونية.</p>
+                    <a href="#" class="see-detail">اطلع على التفاصيل</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Why Choose Legalmark</h2>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-medal"></i>
+                    <h3>Prestige and Respect</h3>
+                    <p>نحن نتمتع بسمعة ممتازة في المجال القانوني ونحترم ثقة عملائنا</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chess-king"></i>
+                    <h3>Strategy and Approach</h3>
+                    <p>نتبع استراتيجيات قانونية محكمة لضمان أفضل النتائج لعملائنا</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Legal Services</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Comprehensive list of the legal services your firm provides.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Family Law Services</h3>
+                    <p>خدمات قانونية شاملة في قضايا الأحوال الشخصية والأسرة</p>
+                    <a href="#" class="see-detail">اطلع على التفاصيل</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>Consultation and Legal</h3>
+                    <p>استشارات قانونية متخصصة في جميع المجالات القانونية</p>
+                    <a href="#" class="see-detail">اطلع على التفاصيل</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Document Preparation</h3>
+                    <p>إعداد وصياغة الوثائق والعقود القانونية المختلفة</p>
+                    <a href="#" class="see-detail">اطلع على التفاصيل</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Info Section -->
+    <section class="office-info">
+        <div class="container">
+            <div class="office-content">
+                <div class="office-image">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop" alt="مكتب المحاماة">
+                </div>
+                <div class="contact-info">
+                    <h3>Head Office</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Al – Maddi – Cairo</p>
+                    <p><i class="fas fa-phone"></i> +22 222 422 / +20 1234567898</p>
+                    <p><i class="fas fa-envelope"></i> hesn@domain.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Client Reviews</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>"خدمة ممتازة ومهنية عالية. تعامل رائع من الفريق القانوني وحلول فعالة لقضيتي."</p>
+                    <div class="reviewer">هالة أحمد - نائب رئيس</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>"مكتب محاماة موثوق ومتخصص. حصلت على أفضل النتائج بفضل خبرتهم الواسعة."</p>
+                    <div class="reviewer">حسام محمد - نائب رئيس</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Understanding Your Rights – Common Legal Questions Answered</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        ما هو دور المحامي في القضايا القانونية؟
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer active">
+                        <p>المحامي يلعب دوراً محورياً في تمثيل العملاء أمام المحاكم وتقديم الاستشارات القانونية وحماية حقوقهم القانونية.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        كيف يمكنني العثور على المحامي المناسب لقضيتي؟
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>يمكنك اختيار المحامي بناءً على خبرته في مجال قضيتك وسمعته المهنية ومعدل نجاحه في القضايا المماثلة.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        كيف يمكنني حماية أصولي للمستقبل من خلال التخطيط العقاري؟
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>التخطيط العقاري يشمل إعداد الوصايا والوكالات وترتيب الأمور المالية لضمان حماية الأصول.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        <span class="arabic">حصن</span>
+                        <span>Legalmark</span>
+                    </div>
+                    <p>مكتب محاماة متخصص يقدم خدمات قانونية شاملة بأعلى معايير الجودة والمهنية.</p>
+                </div>
+                <div>
+                    <h4>خدماتنا</h4>
+                    <ul>
+                        <li><a href="#">قانون الأسرة</a></li>
+                        <li><a href="#">الاستشارات القانونية</a></li>
+                        <li><a href="#">إعداد الوثائق</a></li>
+                        <li><a href="#">التقاضي</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تواصل معنا</h4>
+                    <p><i class="fas fa-phone"></i> +22 222 422</p>
+                    <p><i class="fas fa-envelope"></i> hesn@domain.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> المعادي - القاهرة</p>
+                    <p><i class="fab fa-instagram"></i> @hesn</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 حصن - Legalmark. جميع الحقوق محفوظة. | 
+                   <a href="#">سياسة الخصوصية</a> | 
+                   <a href="#">شروط الاستخدام</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            document.querySelectorAll('.faq-question i').forEach(item => {
+                if (item !== icon) {
+                    item.style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            // Toggle current FAQ item
+            answer.classList.toggle('active');
+            
+            if (answer.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
